@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Join Cohort 3</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JDPC</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About</a></li>
+            <li><a href="startLearning.html">Start Learning</a></li>
+            <li><a href="connectNow.html">Connect With Opportunities</a></li>
+        </ul>
+    </nav>
+
+ <div class="container">
+    <h1 class="page-title">Join Cohort 3</h1>
+
+    <div class="hero-cohort">
+        <div class="hero-card">
+            <h2>Learn at Your Pace</h2>
+            <p>Study on your own schedule with access to full self-paced learning modules and resources.</p>
+            <a href="#waitlist-form" class="btn" onclick="selectTrack('Learn at your pace')">Choose Self-Paced</a>
+        </div>
+
+        <div class="hero-card">
+            <h2>Work with a Mentor</h2>
+            <p>Get guided 1-on-1 support, live feedback, and direct mentorship throughout your learning path.</p>
+            <a href="#waitlist-form" class="btn" onclick="selectTrack('Work with a mentor')">Choose Mentorship</a>
+        </div>
+    </div>
+
+    <section id="waitlist-form" class="waitlist-section">
+        <h2>Join Cohort 3 Waitlist</h2>
+        <p>Fill out the form below to secure your spot for the upcoming cohort.</p>
+
+        <form id="cohortForm" class="waitlist-form" onsubmit="submitToGoogleForms(event)">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="entry.10661465" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="entry.629584756" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="track">Preferred Track</label>
+                <select id="track" name="entry.785478273" required>
+                    <option value="">Select a learning track</option>
+                    <option value="Learn at your pace">Learn at your pace</option>
+                    <option value="Work with a mentor">Work with a mentor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Learning Center Access</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="access-center" name="entry.356585388" value="Learning Center (In-Person)" required>
+                        <label for="access-center">Learning Center (In-Person)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="access-online" name="entry.356585388" value="Online">
+                        <label for="access-online">Online</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="gender-male" name="entry.319334844" value="Male" required>
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="gender-female" name="entry.319334844" value="Female">
+                        <label for="gender-female">Female</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="gender-other" name="entry.319334844" value="Other">
+                        <label for="gender-other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="qualification">Education Qualification</label>
+                <select id="qualification" name="entry.1068152111" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Secondary School">Secondary School</option>
+                    <option value="OND/NCE">OND/NCE</option>
+                    <option value="HND/BSc">HND/BSc</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="PhD">PhD</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Join Waitlist</button>
+        </form>
+    </section>
+</div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>JDPC</h3>
+                <p>Empowering individuals and communities through education, development, and active engagement.</p>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Vision</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>Do you want to receive our newsletter?</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JDPC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
