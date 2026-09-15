@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Admin - JDPC Learning Center</title>
+</head>
+<body>
+
+    <!-- PASSWORD GATE -->
+    <div class="admin-gate" id="adminGate">
+        <div class="admin-gate-box">
+            <h2>Admin Access</h2>
+            <p>Enter the password to continue.</p>
+            <input type="password" id="adminPassword" placeholder="Password">
+            <p id="adminError" hidden>Incorrect password.</p>
+            <button id="adminSubmit" class="submit-btn">Enter</button>
+        </div>
+    </div>
+
+    <!-- ADMIN CONTENT (hidden until password is correct) -->
+    <div class="admin-content" id="adminContent" hidden>
+        <nav class="navbar">
+            <div class="logo">JDPC Admin</div>
+        </nav>
+
+        <section class="admin-section">
+    <h2>Registrations by Track</h2>
+    <p>Counts are updated as new registrations come in.</p>
+    <div class="stats-grid">
+        <div class="stat-card dark-card">
+            <p class="stat-count">2</p>
+            <p class="stat-label">Cybersecurity</p>
+        </div>
+        <div class="stat-card purple-card">
+            <p class="stat-count">3</p>
+            <p class="stat-label">Web Development</p>
+        </div>
+        <div class="stat-card dark-card">
+            <p class="stat-count">1</p>
+            <p class="stat-label">UI/UX</p>
+        </div>
+        <div class="stat-card purple-card">
+            <p class="stat-count">2</p>
+            <p class="stat-label">Data Analysis</p>
+        </div>
+        <div class="stat-card dark-card">
+            <p class="stat-count">1</p>
+            <p class="stat-label">Product Management</p>
+        </div>
+        <div class="stat-card purple-card">
+            <p class="stat-count">1</p>
+            <p class="stat-label">AI Automation</p>
+        </div>
+    </div>
+    <p class="stats-total">Total registered: <strong>10</strong></p>
+</section>
+
+        <section class="admin-section">
+            <h2>Registered Users</h2>
+            <p>Cohort 3 waitlist registrations.</p>
+            <p class="admin-note">
+                Live data lives in the Google Sheet linked to the registration form.
+                <a href="https://docs.google.com/forms/d/1yV11tK_ED1yvzTkB19WxFISFaUX1FzgkGz4NCxPDy6s/edit?pli=1#responses" target="_blank" rel="noopener noreferrer">Open the Sheet &rarr;</a>
+            </p>
+        </section>
+    </div>
+
+   <script>
+    const ADMIN_PASSWORD = "Admin123"; // change this
+
+    const adminGate = document.getElementById('adminGate');
+    const adminContent = document.getElementById('adminContent');
+    const adminPassword = document.getElementById('adminPassword');
+    const adminError = document.getElementById('adminError');
+    const adminSubmit = document.getElementById('adminSubmit');
+
+    function checkPassword() {
+        if (adminPassword.value === ADMIN_PASSWORD) {
+            adminGate.style.display = 'none';
+            adminContent.hidden = false;
+        } else {
+            adminError.hidden = false;
+            adminPassword.value = '';
+            adminPassword.focus();
+        }
+    }
+
+    adminSubmit.addEventListener('click', checkPassword);
+    adminPassword.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') checkPassword();
+    });
+</script>
+
+</body>
+</html>
